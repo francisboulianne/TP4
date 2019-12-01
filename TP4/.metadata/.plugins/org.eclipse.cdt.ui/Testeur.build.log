@@ -1,0 +1,10 @@
+14:26:55 **** Incremental Build of configuration Debug for project Testeur ****
+make all 
+Building target: Testeur
+Invoking: GCC C++ Linker
+g++ -L"/home/etudiant/Documents/TP4/source/Debug" -o "Testeur"  ./Camion_Testeur.o ./Proprietaire_Testeur.o ./VehiculePromenade_Testeur.o ./Vehicule_Testeur.o   -lsource -lgtest_main -lgtest -lpthread
+Finished building target: Testeur
+ 
+
+14:26:58 Build Finished (took 2s.586ms)
+

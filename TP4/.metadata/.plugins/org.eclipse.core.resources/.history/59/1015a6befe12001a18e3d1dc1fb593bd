@@ -1,0 +1,148 @@
+/*
+ * Proprietaire.cpp
+ * \brief Implantation de la classe Proprietaire.
+ * \author Francis Boulianne
+ * \version 1.0
+ * \date 6/10/2019
+ */
+
+#include "Proprietaire.h"
+#include <string.h>
+
+
+namespace saaq
+{
+/**
+ * \brief Constructeur avec paramètres.
+ * On construit un objet Proprietaire à partir des données passées en paramètres.
+ * \param[in] p_nom est le nom du propriétaire
+ * \param[in] p_prenom est le prénom du propriétaire
+ * \pre p_nom, ne doit pas être vide
+ * \pre p_prenom, ne doit pas être vide
+ * \post L'attribut m_nom équivaut à p_nom passé en paramètre
+ * \post L'attribut m_prenom équivaut à p_prenom passé en paramètre
+ */
+Proprietaire::Proprietaire(const std::string& p_nom, const std::string& p_prenom) : m_nom(p_nom), m_prenom(p_prenom)
+{
+	PRECONDITION (!(p_nom.empty()));
+	PRECONDITION (!(p_prenom.empty()));
+
+	POSTCONDITION (reqNom() == p_nom);
+	POSTCONDITION (reqPrenom() == p_prenom);
+	INVARIANTS();
+}
+
+/**
+ * \brief Méthode de surcharge de l'opérateur =.
+ * On construit un objet Proprietaire à partir d'un autre objet Proprietaire.
+ * \param[in] p_proprietaire est un objet Proprietaire que l'on veut copier
+ */
+Proprietaire::Proprietaire(const Proprietaire& p_proprietaire)
+{
+	m_nom = p_proprietaire.m_nom.c_str();
+	m_prenom = p_proprietaire.m_prenom.c_str();
+
+	for (int i=0; (unsigned) i<p_proprietaire.m_vVehicules.size(); i++)
+	{
+		m_vVehicules.push_back(p_proprietaire.m_vVehicules[i]);
+	}
+}
+
+/**
+ * \brief Destructeur de la classe Proprietaire
+ */
+Proprietaire::~Proprietaire()
+{
+	for (vector<Vehicule*>::iterator i = m_vVehicules.begin(); i != m_vVehicules.end(); ++i)
+	{
+ 		delete *i;
+	}
+}
+
+/**
+ * \brief Méthode de surcharge de l'opérateur =.
+ * On assigne un objet Proprietaire à partir d'un autre objet Proprietaire.
+ * \param[in] p_proprietaire est un objet Proprietaire
+ */
+bool Proprietaire::VehiculeEstDejaPresent(const std::string& p_niv) const
+{
+	bool estPresent = false;
+	for (i = 0; i < m_vVehicules.size(); ++i)
+	{
+		if (m_vVehicules[i]->reqNiv() == p_niv)
+		{
+			estPresent = true;
+		}
+	}
+	return estPresent;
+}
+
+/**
+ * \brief Méthode de surcharge de l'opérateur =.
+ * On assigne un objet Proprietaire à partir d'un autre objet Proprietaire.
+ * \param[in] p_proprietaire est un objet Proprietaire
+ */
+const Proprietaire& Proprietaire::operator=(const Proprietaire& p_proprietaire)
+{
+	m_nom = p_proprietaire.m_nom.c_str();
+	m_prenom = p_proprietaire.m_prenom.c_str();
+
+	for (int i=0; (unsigned) i<p_proprietaire.m_vVehicules.size(); i++)
+	{
+		m_vVehicules.push_back(p_proprietaire.m_vVehicules[i]);
+	}
+	return *this;
+}
+
+/**
+ * \brief Méthode d'accès en lecture à l'attribut m_nom
+ * \return un string qui représente le nom du propriétaire
+ */
+const std::string& Proprietaire::reqNom() const
+{
+    return m_nom;
+}
+/**
+ * \brief Méthode d'accès en lecture à l'attribut m_prenom
+ * \return un string qui représente le prénom du propriétaire
+ */
+const std::string& Proprietaire::reqPrenom() const
+{
+    return m_prenom;
+}
+/**
+ * \brief retourne les informations des véhicules du propriétaire formaté dans une chaîne de caracères (string)
+ * \return les informations relatives à chaque véhicule formatées dans une chaîne de caractères
+ */
+std::string Proprietaire::reqProprietaireFormate() const
+{
+	std::ostringstream p_os;
+
+	p_os << "Proprietaire\n-------------------\nNom : " << m_nom << "\nPrenom : " << m_prenom << endl;
+	for (int i=0; (unsigned) i<m_vVehicules.size();i++)
+	{
+		p_os << "-------------------\n";
+		p_os << m_vVehicules[i]->reqVehiculeFormate();
+	}
+
+    return p_os.str();
+}
+/**
+ * \brief Ajoute un véhicule au propriétaire
+ * \param[in] p_nouveauVehicule est un véhicule
+ */
+void Proprietaire::ajouterVehicule (const Vehicule& p_nouveauVehicule)
+{
+	m_vVehicules.push_back(p_nouveauVehicule.clone());
+}
+/**
+ * \brief Teste l'invariant de la classe Camion. L'invariant de cette classe s'assure que les informations du propriétaire sont valides
+ */
+void Proprietaire::verifieInvariant() const
+{
+	INVARIANT(!(m_nom.empty()));
+	INVARIANT(!(m_prenom.empty()));
+}
+
+
+}// namespace saaq

@@ -1,0 +1,110 @@
+/**
+ * \file gestionImmatriculations.cpp
+ * \brief Programme interactif minimaliste qui permet de construire un véhicule.
+ * \author Francis Boulianne
+ * \version 1.0
+ * \date 6/10/2019
+ */
+
+#include "Vehicule.h"
+#include "VehiculePromenade.h"
+#include "Camion.h"
+#include "Proprietaire.h"
+#include <iostream>
+
+using namespace util;
+
+int main()
+{
+	saaq::Camion unCamion(3, 3001, "3VWFE21C04M000001", "L123123");
+	saaq::Camion unCamion2(3, 3001, "3VWFE21C04M000001", "L123123");
+	saaq::Proprietaire unProprio("Tremblay", "Louis");
+	unProprio.ajouterVehicule(unCamion);
+	unProprio.ajouterVehicule(unCamion2);
+	cout << "*******************************************************\n\nBienvenue a l'outil d'ajout de gestion de vehicules\n\n"
+			"*******************************************************\n\n-------------------------------------------------------\n"
+			"Ajoutez un vehicule de promenade\n-------------------------------------------------------\n" << endl;
+
+	std::string num_Serie;
+	cout << "Entrez le numero de serie :" << endl;
+	getline(cin, num_Serie);
+	while (!util::validerNiv(num_Serie))
+	{
+		cout << "Ce numero de Serie n'est pas valide\nEntrez le numero de serie :" << endl;
+		getline(cin, num_Serie);
+	}
+
+	std::string num_Immatriculation;
+	cout << "\nEntrez le numero d'immatriculation :" << endl;
+	getline(cin, num_Immatriculation);
+	while (!util::validationImmatriculationPromenade(num_Immatriculation))
+	{
+		cout << "Le numero d'immatriculation n'est pas valide.\n\nEntrez le numero d'immatriculation :" << endl;
+		getline(cin, num_Immatriculation);
+	}
+
+	int nb_Places;
+	cout << "\nEntrez le nombre de places > 0 :" << endl;
+	cin >> nb_Places;
+	cin.ignore();
+	while (nb_Places <= 0)
+	{
+		cout << "le nombre de places ne peut etre negatif\nEntrez le nombre de places > 0 :" << endl;
+		cin >> nb_Places;
+		cin.ignore();
+	}
+
+	saaq::VehiculePromenade unVehicule(nb_Places, num_Serie, num_Immatriculation);
+
+	cout << "\n-------------------------------------------------------\nAjoutez un camion\n-------------------------------------------------------\n" << endl;
+
+	std::string num_SerieCamion;
+	cout << "Entrez le numero de serie :" << endl;
+	getline(cin, num_SerieCamion);
+	while (!util::validerNiv(num_SerieCamion))
+	{
+		cout << "Ce numero de Serie n'est pas valide\nEntrez le numero de serie :" << endl;
+		getline(cin, num_SerieCamion);
+	}
+
+	std::string num_ImmatriculationCamion;
+	cout << "\nEntrez le numero d'immatriculation :" << endl;
+	getline(cin, num_ImmatriculationCamion);
+	while (!util::validationImmatriculationCamion(num_ImmatriculationCamion))
+	{
+		cout << "Le numero d'immatriculation n'est pas valide.\n\nEntrez le numero d'immatriculation :" << endl;
+		getline(cin, num_ImmatriculationCamion);
+	}
+
+	int poids;
+	cout << "\nEntrez le poids du camion > 3000 kg :" << endl;
+	cin >> poids;
+	cin.ignore();
+	while (poids <= 3000)
+	{
+		cout << "le poids du camion doit etre plus grand que 3000 kg\nEntrez le poids du camion > 0 :" << endl;
+		cin >> poids;
+	}
+
+	int nb_Essieux;
+	cout << "\nEntrez le nombre d'essieux >= 2 :" << endl;
+	cin >> nb_Essieux;
+	cin.ignore();
+	while (nb_Essieux < 2)
+	{
+		cout << "le nombre d'essieux du camion doit etre plus grand ou egal a 2\nEntrez le nombre d'essieux du camion >= 2 :" << endl;
+		cin >> nb_Essieux;
+	}
+
+	saaq::Camion unCamion(poids, nb_Essieux, num_SerieCamion, num_ImmatriculationCamion);
+
+	saaq::Proprietaire unProprio("Tremblay", "Louis");
+
+	unProprio.ajouterVehicule(unVehicule);
+	unProprio.ajouterVehicule(unCamion);
+	cout << "\n" << unProprio.reqProprietaireFormate() << endl;
+
+
+	return 0;
+}
+

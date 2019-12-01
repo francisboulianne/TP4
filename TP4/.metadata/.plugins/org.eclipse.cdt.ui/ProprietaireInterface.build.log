@@ -1,0 +1,10 @@
+20:49:22 **** Incremental Build of project ProprietaireInterface ****
+make debug 
+/usr/lib/i386-linux-gnu/qt4/bin/qmake CONFIG+=debug_and_release -o Makefile ProprietaireInterface.pro
+make -f Makefile.Debug
+make[1] : on entre dans le répertoire « /home/etudiant/Documents/TP4/ProprietaireInterface »
+make[1]: rien à faire pour « first ».
+make[1] : on quitte le répertoire « /home/etudiant/Documents/TP4/ProprietaireInterface »
+
+20:49:24 Build Finished (took 1s.850ms)
+

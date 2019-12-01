@@ -1,0 +1,7 @@
+14:27:01 **** Incremental Build of configuration Debug for project Utilisation ****
+make all 
+Building target: Utilisation
+Invoking: GCC C++ Linker
+g++ -L"/home/etudiant/Documents/TP4/source/Debug" -o "Utilisation"  ./gestionImmatriculations.o   -lsource
+Finished building target: Utilisation
+ 
