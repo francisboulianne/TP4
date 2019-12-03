@@ -1,0 +1,12 @@
+#include "promenadeqt.h"
+
+promenadeqt::promenadeqt(QWidget *parent)
+    : QDialog(parent)
+{
+	ui.setupUi(this);
+}
+
+promenadeqt::~promenadeqt()
+{
+
+}

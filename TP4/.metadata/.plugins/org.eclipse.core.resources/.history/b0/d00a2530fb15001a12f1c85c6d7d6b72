@@ -1,0 +1,15 @@
+#include "proprietaireqt.h"
+
+ProprietaireQt::ProprietaireQt(QWidget *parent)
+    : QMainWindow(parent)
+{
+	ui.setupUi(this);
+	QObject::connect(ui.actionPromenade, SIGNAL(triggered()), this, SLOT(ajouterVehiculePromenade()));
+}
+
+ProprietaireQt::~ProprietaireQt()
+{
+
+}
+
+void ProprietaireQt::ajouterVehiculePromenade(){}

@@ -1,0 +1,50 @@
+#include "promenadeqt.h"
+
+promenadeqt::promenadeqt(QWidget *parent)
+    : QDialog(parent)
+{
+	ui.setupUi(this);
+	QObject::connect(ui.pushButtonAJouter, SIGNAL(clicked()), this, SLOT(validerSaisie()));
+}
+
+promenadeqt::~promenadeqt()
+{
+
+}
+
+std::string promenadeqt::reqNiv() const
+{
+	return ui.lineEdit_niv->text().toStdString();
+}
+
+std::string promenadeqt::reqImmatriculation() const
+{
+	return ui.lineEdit_immatriculation->text().toStdString();
+}
+
+int promenadeqt::reqNbPlaces() const
+{
+	return ui.lineEdit_places->value();
+}
+
+void OuvrageQt::validerSaisie()
+{
+	if (ui.lineEdit_niv->text().isEmpty())
+	{
+		QString message = "Le numéro de série ne doit pas être vide";
+		QMessageBox::information(this, "Message d'erreur", message);
+		return;
+	}
+
+	if (!(util::validerNiv(this->reqNiv())))
+	{
+		QString message = "Le numéro de série doit être dans un format valide";
+		QMessageBox::information(this, "Message d'erreur", message);
+		return;
+	}
+
+	else
+	{
+		accept();
+	}
+}

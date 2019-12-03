@@ -1,0 +1,29 @@
+14:24:36 **** Incremental Build of project proprietaireQt ****
+make debug 
+/usr/lib/i386-linux-gnu/qt4/bin/qmake CONFIG+=debug_and_release -o Makefile proprietaireQt.pro
+WARNING: Failure to find: SOURCES
+WARNING: Failure to find: +=
+WARNING: Failure to find: FORMS
+WARNING: Failure to find: +=
+WARNING: Failure to find: SOURCES
+WARNING: Failure to find: +=
+WARNING: Failure to find: FORMS
+WARNING: Failure to find: +=
+make -f Makefile.Debug
+make[1] : on entre dans le répertoire « /home/etudiant/Documents/TP4/proprietaireQt »
+g++  -o proprietaireQt debug/moc_proprietaireqt.o    -L/usr/lib/i386-linux-gnu -lQtGui -lQtCore -lpthread 
+/usr/lib/gcc/i686-linux-gnu/7/../../../i386-linux-gnu/Scrt1.o : Dans la fonction « _start » :
+(.text+0x28) : référence indéfinie vers « main »
+debug/moc_proprietaireqt.o:(.data.rel.ro._ZTV14proprietaireQt[_ZTV14proprietaireQt]+0x14) : référence indéfinie vers « proprietaireQt::~proprietaireQt() »
+Makefile.Debug:103: recipe for target 'proprietaireQt' failed
+make[1] : on quitte le répertoire « /home/etudiant/Documents/TP4/proprietaireQt »
+debug/moc_proprietaireqt.o:(.data.rel.ro._ZTV14proprietaireQt[_ZTV14proprietaireQt]+0x18) : référence indéfinie vers « proprietaireQt::~proprietaireQt() »
+debug/moc_proprietaireqt.o:(.data.rel.ro._ZTV14proprietaireQt[_ZTV14proprietaireQt]+0xec) : référence indéfinie vers « non-virtual thunk to proprietaireQt::~proprietaireQt() »
+debug/moc_proprietaireqt.o:(.data.rel.ro._ZTV14proprietaireQt[_ZTV14proprietaireQt]+0xf0) : référence indéfinie vers « non-virtual thunk to proprietaireQt::~proprietaireQt() »
+collect2: error: ld returned 1 exit status
+Makefile:50: recipe for target 'debug' failed
+make[1]: *** [proprietaireQt] Error 1
+make: *** [debug] Error 2
+
+14:24:37 Build Finished (took 988ms)
+

@@ -1,0 +1,17 @@
+#include "promenadeqt.h"
+
+promenadeqt::promenadeqt(QWidget *parent)
+    : QDialog(parent)
+{
+	ui.setupUi(this);
+}
+
+promenadeqt::~promenadeqt()
+{
+
+}
+
+std::string promenadeqt::reqNiv() const
+{
+	return ui.lineEdit_niv->text().toStdString();
+}

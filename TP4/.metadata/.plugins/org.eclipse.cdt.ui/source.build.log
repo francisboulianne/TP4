@@ -1,6 +1,6 @@
-14:26:49 **** Incremental Build of configuration Debug for project source ****
+14:27:43 **** Incremental Build of configuration Debug for project source ****
 make all 
 make: rien à faire pour « all ».
 
-14:26:51 Build Finished (took 2s.43ms)
+14:27:44 Build Finished (took 677ms)
 

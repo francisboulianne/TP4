@@ -1,0 +1,12 @@
+#include "proprietaireqt.h"
+
+ProprietaireQt::ProprietaireQt(QWidget *parent)
+    : QMainWindow(parent)
+{
+	ui.setupUi(this);
+}
+
+ProprietaireQt::~ProprietaireQt()
+{
+
+}

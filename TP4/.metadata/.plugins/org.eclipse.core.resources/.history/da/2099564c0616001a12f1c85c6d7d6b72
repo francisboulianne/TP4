@@ -1,0 +1,73 @@
+#include "promenadeqt.h"
+#include "validationFormat.h"
+#include <qmessagebox.h>
+
+promenadeqt::promenadeqt(QWidget *parent)
+    : QDialog(parent)
+{
+	ui.setupUi(this);
+	QObject::connect(ui.pushButtonAJouter, SIGNAL(clicked()), this, SLOT(validerSaisie()));
+}
+
+promenadeqt::~promenadeqt()
+{
+
+}
+
+std::string promenadeqt::reqNiv() const
+{
+	return ui.lineEdit_niv->text().toStdString();
+}
+
+std::string promenadeqt::reqImmatriculation() const
+{
+	return ui.lineEdit_immatriculation->text().toStdString();
+}
+
+int promenadeqt::reqNbPlaces() const
+{
+	return ui.spinBox_places->value();
+}
+
+void promenadeqt::validerSaisie()
+{
+	if (ui.lineEdit_niv->text().isEmpty())
+	{
+		QString message = "Le numéro de série ne doit pas être vide";
+		QMessageBox::information(this, "Message d'erreur", message);
+		return;
+	}
+
+	if (!(util::validerNiv(this->reqNiv())))
+	{
+		QString message = "Le numéro de série doit être dans un format valide";
+		QMessageBox::information(this, "Message d'erreur", message);
+		return;
+	}
+
+	if (ui.lineEdit_immatriculation->text().isEmpty())
+	{
+		QString message = "Le numéro d'immatriculation ne doit pas être vide";
+		QMessageBox::information(this, "Message d'erreur", message);
+		return;
+	}
+
+	if (!(util::validerImmatriculationPromenade(this->reqImmatriculation())))
+	{
+		QString message = "Le numéro d'immatriculation doit être dans un format valide";
+		QMessageBox::information(this, "Message d'erreur", message);
+		return;
+	}
+
+	if (this->reqNbPlaces() < 1)
+	{
+		QString message = "Le numéro d'immatriculation doit être plus grand que 0";
+		QMessageBox::information(this, "Message d'erreur", message);
+		return;
+	}
+
+	else
+	{
+		accept();
+	}
+}
