@@ -2,12 +2,15 @@ TEMPLATE = app
 TARGET = ProprietaireQt
 QT += core \
     gui
-HEADERS += promenadeqt.h \
+HEADERS += camionqt.h \
+    promenadeqt.h \
     proprietaireqt.h
-SOURCES += promenadeqt.cpp \
+SOURCES += camionqt.cpp \
+    promenadeqt.cpp \
     main.cpp \
     proprietaireqt.cpp
-FORMS += promenadeqt.ui \
+FORMS += camionqt.ui \
+    promenadeqt.ui \
     proprietaireqt.ui
 RESOURCES += 
 LIBS += "../source/Debug/libsource.a"

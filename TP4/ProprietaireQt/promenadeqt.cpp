@@ -61,7 +61,7 @@ void promenadeqt::validerSaisie()
 
 	if (this->reqNbPlaces() < 1)
 	{
-		QString message = "Le numéro d'immatriculation doit être plus grand que 0";
+		QString message = "Le nombre de places doit être supérieur à 0";
 		QMessageBox::information(this, "Message d'erreur", message);
 		return;
 	}

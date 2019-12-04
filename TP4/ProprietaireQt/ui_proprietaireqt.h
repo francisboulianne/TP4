@@ -17,7 +17,9 @@
 #include <QtGui/QMainWindow>
 #include <QtGui/QMenu>
 #include <QtGui/QMenuBar>
+#include <QtGui/QPushButton>
 #include <QtGui/QStatusBar>
+#include <QtGui/QTextEdit>
 #include <QtGui/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -30,6 +32,8 @@ public:
     QAction *actionV_hicule_promenade;
     QAction *actionCamion_2;
     QWidget *centralwidget;
+    QPushButton *pushButton_afficherVehicule;
+    QTextEdit *textEdit;
     QMenuBar *menubar;
     QMenu *menuAjouter_Vehicule;
     QStatusBar *statusbar;
@@ -49,6 +53,12 @@ public:
         actionCamion_2->setObjectName(QString::fromUtf8("actionCamion_2"));
         centralwidget = new QWidget(ProprietaireQtClass);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
+        pushButton_afficherVehicule = new QPushButton(centralwidget);
+        pushButton_afficherVehicule->setObjectName(QString::fromUtf8("pushButton_afficherVehicule"));
+        pushButton_afficherVehicule->setGeometry(QRect(270, 10, 141, 28));
+        textEdit = new QTextEdit(centralwidget);
+        textEdit->setObjectName(QString::fromUtf8("textEdit"));
+        textEdit->setGeometry(QRect(140, 50, 411, 291));
         ProprietaireQtClass->setCentralWidget(centralwidget);
         menubar = new QMenuBar(ProprietaireQtClass);
         menubar->setObjectName(QString::fromUtf8("menubar"));
@@ -76,6 +86,7 @@ public:
         actionCamion->setText(QApplication::translate("ProprietaireQtClass", "Camion", 0, QApplication::UnicodeUTF8));
         actionV_hicule_promenade->setText(QApplication::translate("ProprietaireQtClass", "V\303\251hicule promenade", 0, QApplication::UnicodeUTF8));
         actionCamion_2->setText(QApplication::translate("ProprietaireQtClass", "Camion", 0, QApplication::UnicodeUTF8));
+        pushButton_afficherVehicule->setText(QApplication::translate("ProprietaireQtClass", "Afficher les v\303\251hicules", 0, QApplication::UnicodeUTF8));
         menuAjouter_Vehicule->setTitle(QApplication::translate("ProprietaireQtClass", "Ajouter un v\303\251hicule", 0, QApplication::UnicodeUTF8));
     } // retranslateUi
 

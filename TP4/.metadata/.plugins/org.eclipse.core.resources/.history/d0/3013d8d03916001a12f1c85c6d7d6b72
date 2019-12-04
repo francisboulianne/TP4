@@ -1,0 +1,12 @@
+#include "camionqt.h"
+
+CamionQt::CamionQt(QWidget *parent)
+    : QDialog(parent)
+{
+	ui.setupUi(this);
+}
+
+CamionQt::~CamionQt()
+{
+
+}
