@@ -162,7 +162,7 @@ void Proprietaire::supprimerVehicule(const std::string& p_niv)
 	}
 	else
 	{
-		throw VehiculeAbsentException(p_niv);
+		throw VehiculeAbsentException("Le véhicule est absent");
 	}
 }
 /**

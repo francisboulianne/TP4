@@ -21,6 +21,7 @@ private slots:
 	void ajouterVehiculePromenade();
 	void ajouterCamion();
 	void afficherVehicule();
+	void supprimerVehicule();
 
 private:
     Ui::ProprietaireQtClass ui;

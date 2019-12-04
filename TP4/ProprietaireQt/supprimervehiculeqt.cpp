@@ -1,0 +1,42 @@
+#include "supprimervehiculeqt.h"
+#include "validationFormat.h"
+#include <qmessagebox.h>
+
+SupprimerVehiculeQt::SupprimerVehiculeQt(QWidget *parent)
+    : QDialog(parent)
+{
+	ui.setupUi(this);
+	QObject::connect(ui.pushButtonSupprimer, SIGNAL(clicked()), this, SLOT(validerSaisie()));
+}
+
+SupprimerVehiculeQt::~SupprimerVehiculeQt()
+{
+
+}
+
+std::string SupprimerVehiculeQt::reqNiv() const
+{
+	return ui.lineEdit_niv->text().toStdString();
+}
+
+void SupprimerVehiculeQt::validerSaisie()
+{
+	if (ui.lineEdit_niv->text().isEmpty())
+	{
+		QString message = "Le numéro de série ne doit pas être vide";
+		QMessageBox::information(this, "Message d'erreur", message);
+		return;
+	}
+
+	if (!(util::validerNiv(this->reqNiv())))
+	{
+		QString message = "Le numéro de série doit être dans un format valide";
+		QMessageBox::information(this, "Message d'erreur", message);
+		return;
+	}
+
+	else
+	{
+		accept();
+	}
+}

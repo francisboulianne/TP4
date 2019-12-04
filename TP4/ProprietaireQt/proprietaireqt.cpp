@@ -1,6 +1,7 @@
 #include "proprietaireqt.h"
 #include "promenadeqt.h"
 #include "camionqt.h"
+#include "supprimervehiculeqt.h"
 
 ProprietaireQt::ProprietaireQt(QWidget *parent, std::string p_nom, std::string p_prenom)
     : QMainWindow(parent), m_proprietaire(p_nom, p_prenom)
@@ -8,6 +9,7 @@ ProprietaireQt::ProprietaireQt(QWidget *parent, std::string p_nom, std::string p
 	ui.setupUi(this);
 	QObject::connect(ui.actionV_hicule_promenade, SIGNAL(triggered()), this, SLOT(ajouterVehiculePromenade()));
 	QObject::connect(ui.actionCamion_2, SIGNAL(triggered()), this, SLOT(ajouterCamion()));
+	QObject::connect(ui.actionSupprimer, SIGNAL(triggered()), this, SLOT(supprimerVehicule()));
 	QObject::connect(ui.pushButton_afficherVehicule, SIGNAL(clicked()), this, SLOT(afficherVehicule()));
 }
 
@@ -16,7 +18,8 @@ ProprietaireQt::~ProprietaireQt()
 
 }
 
-void ProprietaireQt::ajouterVehiculePromenade(){
+void ProprietaireQt::ajouterVehiculePromenade()
+{
 	promenadeqt promenadeQt;
 	if (promenadeQt.exec())
 	{
@@ -39,7 +42,8 @@ void ProprietaireQt::ajouterVehiculePromenade(){
 	}
 }
 
-void ProprietaireQt::ajouterCamion(){
+void ProprietaireQt::ajouterCamion()
+{
 	CamionQt camionQt;
 	if (camionQt.exec())
 	{
@@ -58,6 +62,22 @@ void ProprietaireQt::ajouterCamion(){
 		{
 		QString message(p_r.what());
 		QMessageBox::information(this, "Message d'erreur", message);
+		}
+	}
+}
+
+void ProprietaireQt::supprimerVehicule()
+{
+	SupprimerVehiculeQt supprimerVehicule;
+	if (supprimerVehicule.exec())
+	{
+		try
+		{
+			m_proprietaire.supprimerVehicule(supprimerVehicule.reqNiv());
+		}
+		catch(const VehiculeAbsentException& p_r)
+		{
+		QMessageBox::information(this, "Message d'erreur", "Le véhicule est absent");
 		}
 	}
 }

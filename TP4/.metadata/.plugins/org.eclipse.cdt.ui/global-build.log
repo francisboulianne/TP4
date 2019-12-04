@@ -1,56 +1,16 @@
-21:02:30 **** Incremental Build of project ProprietaireQt ****
+13:07:32 **** Incremental Build of project ProprietaireQt ****
 make debug 
 make -f Makefile.Debug
 make[1] : on entre dans le répertoire « /home/etudiant/Documents/TP4/ProprietaireQt »
 g++ -c -pipe -g -Wall -W -D_REENTRANT -DQT_GUI_LIB -DQT_CORE_LIB -DQT_SHARED -I/usr/share/qt4/mkspecs/linux-g++ -I. -I/usr/include/qt4/QtCore -I/usr/include/qt4/QtGui -I/usr/include/qt4 -I../source -Idebug -I. -o debug/proprietaireqt.o proprietaireqt.cpp
-/usr/lib/i386-linux-gnu/qt4/bin/moc -DQT_GUI_LIB -DQT_CORE_LIB -DQT_SHARED -I/usr/share/qt4/mkspecs/linux-g++ -I. -I/usr/include/qt4/QtCore -I/usr/include/qt4/QtGui -I/usr/include/qt4 -I../source -Idebug -I. camionqt.h -o debug/moc_camionqt.cpp
-g++ -c -pipe -g -Wall -W -D_REENTRANT -DQT_GUI_LIB -DQT_CORE_LIB -DQT_SHARED -I/usr/share/qt4/mkspecs/linux-g++ -I. -I/usr/include/qt4/QtCore -I/usr/include/qt4/QtGui -I/usr/include/qt4 -I../source -Idebug -I. -o debug/moc_camionqt.o debug/moc_camionqt.cpp
-/usr/lib/i386-linux-gnu/qt4/bin/moc -DQT_GUI_LIB -DQT_CORE_LIB -DQT_SHARED -I/usr/share/qt4/mkspecs/linux-g++ -I. -I/usr/include/qt4/QtCore -I/usr/include/qt4/QtGui -I/usr/include/qt4 -I../source -Idebug -I. proprietaireqt.h -o debug/moc_proprietaireqt.cpp
-g++ -c -pipe -g -Wall -W -D_REENTRANT -DQT_GUI_LIB -DQT_CORE_LIB -DQT_SHARED -I/usr/share/qt4/mkspecs/linux-g++ -I. -I/usr/include/qt4/QtCore -I/usr/include/qt4/QtGui -I/usr/include/qt4 -I../source -Idebug -I. -o debug/moc_proprietaireqt.o debug/moc_proprietaireqt.cpp
-g++  -o ProprietaireQt debug/camionqt.o debug/promenadeqt.o debug/main.o debug/proprietaireqt.o debug/moc_camionqt.o debug/moc_promenadeqt.o debug/moc_proprietaireqt.o    -L/usr/lib/i386-linux-gnu ../source/Debug/libsource.a -lQtGui -lQtCore -lpthread 
+g++  -o ProprietaireQt debug/supprimervehiculeqt.o debug/camionqt.o debug/promenadeqt.o debug/main.o debug/proprietaireqt.o debug/moc_supprimervehiculeqt.o debug/moc_camionqt.o debug/moc_promenadeqt.o debug/moc_proprietaireqt.o    -L/usr/lib/i386-linux-gnu ../source/Debug/libsource.a -lQtGui -lQtCore -lpthread 
 { test -n "" && DESTDIR="" || DESTDIR=.; } && test $(gdb --version | sed -e 's,[^0-9][^0-9]*\([0-9]\)\.\([0-9]\).*,\1\2,;q') -gt 72 && gdb --nx --batch --quiet -ex 'set confirm off' -ex "save gdb-index $DESTDIR" -ex quit 'ProprietaireQt' && test -f ProprietaireQt.gdb-index && objcopy --add-section '.gdb_index=ProprietaireQt.gdb-index' --set-section-flags '.gdb_index=readonly' 'ProprietaireQt' 'ProprietaireQt' && rm -f ProprietaireQt.gdb-index || true
 make[1] : on quitte le répertoire « /home/etudiant/Documents/TP4/ProprietaireQt »
-21:04:22 **** Incremental Build of project ProprietaireQt ****
+13:08:20 **** Incremental Build of project ProprietaireQt ****
 make debug 
 make -f Makefile.Debug
 make[1] : on entre dans le répertoire « /home/etudiant/Documents/TP4/ProprietaireQt »
 g++ -c -pipe -g -Wall -W -D_REENTRANT -DQT_GUI_LIB -DQT_CORE_LIB -DQT_SHARED -I/usr/share/qt4/mkspecs/linux-g++ -I. -I/usr/include/qt4/QtCore -I/usr/include/qt4/QtGui -I/usr/include/qt4 -I../source -Idebug -I. -o debug/proprietaireqt.o proprietaireqt.cpp
-g++  -o ProprietaireQt debug/camionqt.o debug/promenadeqt.o debug/main.o debug/proprietaireqt.o debug/moc_camionqt.o debug/moc_promenadeqt.o debug/moc_proprietaireqt.o    -L/usr/lib/i386-linux-gnu ../source/Debug/libsource.a -lQtGui -lQtCore -lpthread 
-{ test -n "" && DESTDIR="" || DESTDIR=.; } && test $(gdb --version | sed -e 's,[^0-9][^0-9]*\([0-9]\)\.\([0-9]\).*,\1\2,;q') -gt 72 && gdb --nx --batch --quiet -ex 'set confirm off' -ex "save gdb-index $DESTDIR" -ex quit 'ProprietaireQt' && test -f ProprietaireQt.gdb-index && objcopy --add-section '.gdb_index=ProprietaireQt.gdb-index' --set-section-flags '.gdb_index=readonly' 'ProprietaireQt' 'ProprietaireQt' && rm -f ProprietaireQt.gdb-index || true
-make[1] : on quitte le répertoire « /home/etudiant/Documents/TP4/ProprietaireQt »
-21:15:24 **** Incremental Build of project ProprietaireQt ****
-make debug 
-make -f Makefile.Debug
-make[1] : on entre dans le répertoire « /home/etudiant/Documents/TP4/ProprietaireQt »
-/usr/lib/i386-linux-gnu/qt4/bin/uic camionqt.ui -o ui_camionqt.h
-g++ -c -pipe -g -Wall -W -D_REENTRANT -DQT_GUI_LIB -DQT_CORE_LIB -DQT_SHARED -I/usr/share/qt4/mkspecs/linux-g++ -I. -I/usr/include/qt4/QtCore -I/usr/include/qt4/QtGui -I/usr/include/qt4 -I../source -Idebug -I. -o debug/camionqt.o camionqt.cpp
-/usr/lib/i386-linux-gnu/qt4/bin/moc -DQT_GUI_LIB -DQT_CORE_LIB -DQT_SHARED -I/usr/share/qt4/mkspecs/linux-g++ -I. -I/usr/include/qt4/QtCore -I/usr/include/qt4/QtGui -I/usr/include/qt4 -I../source -Idebug -I. camionqt.h -o debug/moc_camionqt.cpp
-g++ -c -pipe -g -Wall -W -D_REENTRANT -DQT_GUI_LIB -DQT_CORE_LIB -DQT_SHARED -I/usr/share/qt4/mkspecs/linux-g++ -I. -I/usr/include/qt4/QtCore -I/usr/include/qt4/QtGui -I/usr/include/qt4 -I../source -Idebug -I. -o debug/moc_camionqt.o debug/moc_camionqt.cpp
-g++  -o ProprietaireQt debug/camionqt.o debug/promenadeqt.o debug/main.o debug/proprietaireqt.o debug/moc_camionqt.o debug/moc_promenadeqt.o debug/moc_proprietaireqt.o    -L/usr/lib/i386-linux-gnu ../source/Debug/libsource.a -lQtGui -lQtCore -lpthread 
-{ test -n "" && DESTDIR="" || DESTDIR=.; } && test $(gdb --version | sed -e 's,[^0-9][^0-9]*\([0-9]\)\.\([0-9]\).*,\1\2,;q') -gt 72 && gdb --nx --batch --quiet -ex 'set confirm off' -ex "save gdb-index $DESTDIR" -ex quit 'ProprietaireQt' && test -f ProprietaireQt.gdb-index && objcopy --add-section '.gdb_index=ProprietaireQt.gdb-index' --set-section-flags '.gdb_index=readonly' 'ProprietaireQt' 'ProprietaireQt' && rm -f ProprietaireQt.gdb-index || true
-make[1] : on quitte le répertoire « /home/etudiant/Documents/TP4/ProprietaireQt »
-21:23:06 **** Incremental Build of project ProprietaireQt ****
-make debug 
-make -f Makefile.Debug
-make[1] : on entre dans le répertoire « /home/etudiant/Documents/TP4/ProprietaireQt »
-g++ -c -pipe -g -Wall -W -D_REENTRANT -DQT_GUI_LIB -DQT_CORE_LIB -DQT_SHARED -I/usr/share/qt4/mkspecs/linux-g++ -I. -I/usr/include/qt4/QtCore -I/usr/include/qt4/QtGui -I/usr/include/qt4 -I../source -Idebug -I. -o debug/camionqt.o camionqt.cpp
-g++  -o ProprietaireQt debug/camionqt.o debug/promenadeqt.o debug/main.o debug/proprietaireqt.o debug/moc_camionqt.o debug/moc_promenadeqt.o debug/moc_proprietaireqt.o    -L/usr/lib/i386-linux-gnu ../source/Debug/libsource.a -lQtGui -lQtCore -lpthread 
-{ test -n "" && DESTDIR="" || DESTDIR=.; } && test $(gdb --version | sed -e 's,[^0-9][^0-9]*\([0-9]\)\.\([0-9]\).*,\1\2,;q') -gt 72 && gdb --nx --batch --quiet -ex 'set confirm off' -ex "save gdb-index $DESTDIR" -ex quit 'ProprietaireQt' && test -f ProprietaireQt.gdb-index && objcopy --add-section '.gdb_index=ProprietaireQt.gdb-index' --set-section-flags '.gdb_index=readonly' 'ProprietaireQt' 'ProprietaireQt' && rm -f ProprietaireQt.gdb-index || true
-make[1] : on quitte le répertoire « /home/etudiant/Documents/TP4/ProprietaireQt »
-21:29:04 **** Incremental Build of project ProprietaireQt ****
-make debug 
-make -f Makefile.Debug
-make[1] : on entre dans le répertoire « /home/etudiant/Documents/TP4/ProprietaireQt »
-g++ -c -pipe -g -Wall -W -D_REENTRANT -DQT_GUI_LIB -DQT_CORE_LIB -DQT_SHARED -I/usr/share/qt4/mkspecs/linux-g++ -I. -I/usr/include/qt4/QtCore -I/usr/include/qt4/QtGui -I/usr/include/qt4 -I../source -Idebug -I. -o debug/camionqt.o camionqt.cpp
-g++ -c -pipe -g -Wall -W -D_REENTRANT -DQT_GUI_LIB -DQT_CORE_LIB -DQT_SHARED -I/usr/share/qt4/mkspecs/linux-g++ -I. -I/usr/include/qt4/QtCore -I/usr/include/qt4/QtGui -I/usr/include/qt4 -I../source -Idebug -I. -o debug/promenadeqt.o promenadeqt.cpp
-g++  -o ProprietaireQt debug/camionqt.o debug/promenadeqt.o debug/main.o debug/proprietaireqt.o debug/moc_camionqt.o debug/moc_promenadeqt.o debug/moc_proprietaireqt.o    -L/usr/lib/i386-linux-gnu ../source/Debug/libsource.a -lQtGui -lQtCore -lpthread 
-{ test -n "" && DESTDIR="" || DESTDIR=.; } && test $(gdb --version | sed -e 's,[^0-9][^0-9]*\([0-9]\)\.\([0-9]\).*,\1\2,;q') -gt 72 && gdb --nx --batch --quiet -ex 'set confirm off' -ex "save gdb-index $DESTDIR" -ex quit 'ProprietaireQt' && test -f ProprietaireQt.gdb-index && objcopy --add-section '.gdb_index=ProprietaireQt.gdb-index' --set-section-flags '.gdb_index=readonly' 'ProprietaireQt' 'ProprietaireQt' && rm -f ProprietaireQt.gdb-index || true
-make[1] : on quitte le répertoire « /home/etudiant/Documents/TP4/ProprietaireQt »
-21:31:24 **** Incremental Build of project ProprietaireQt ****
-make debug 
-make -f Makefile.Debug
-make[1] : on entre dans le répertoire « /home/etudiant/Documents/TP4/ProprietaireQt »
-g++ -c -pipe -g -Wall -W -D_REENTRANT -DQT_GUI_LIB -DQT_CORE_LIB -DQT_SHARED -I/usr/share/qt4/mkspecs/linux-g++ -I. -I/usr/include/qt4/QtCore -I/usr/include/qt4/QtGui -I/usr/include/qt4 -I../source -Idebug -I. -o debug/camionqt.o camionqt.cpp
-g++  -o ProprietaireQt debug/camionqt.o debug/promenadeqt.o debug/main.o debug/proprietaireqt.o debug/moc_camionqt.o debug/moc_promenadeqt.o debug/moc_proprietaireqt.o    -L/usr/lib/i386-linux-gnu ../source/Debug/libsource.a -lQtGui -lQtCore -lpthread 
+g++  -o ProprietaireQt debug/supprimervehiculeqt.o debug/camionqt.o debug/promenadeqt.o debug/main.o debug/proprietaireqt.o debug/moc_supprimervehiculeqt.o debug/moc_camionqt.o debug/moc_promenadeqt.o debug/moc_proprietaireqt.o    -L/usr/lib/i386-linux-gnu ../source/Debug/libsource.a -lQtGui -lQtCore -lpthread 
 { test -n "" && DESTDIR="" || DESTDIR=.; } && test $(gdb --version | sed -e 's,[^0-9][^0-9]*\([0-9]\)\.\([0-9]\).*,\1\2,;q') -gt 72 && gdb --nx --batch --quiet -ex 'set confirm off' -ex "save gdb-index $DESTDIR" -ex quit 'ProprietaireQt' && test -f ProprietaireQt.gdb-index && objcopy --add-section '.gdb_index=ProprietaireQt.gdb-index' --set-section-flags '.gdb_index=readonly' 'ProprietaireQt' 'ProprietaireQt' && rm -f ProprietaireQt.gdb-index || true
 make[1] : on quitte le répertoire « /home/etudiant/Documents/TP4/ProprietaireQt »

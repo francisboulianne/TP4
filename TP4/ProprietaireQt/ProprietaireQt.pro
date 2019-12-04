@@ -2,14 +2,17 @@ TEMPLATE = app
 TARGET = ProprietaireQt
 QT += core \
     gui
-HEADERS += camionqt.h \
+HEADERS += supprimervehiculeqt.h \
+    camionqt.h \
     promenadeqt.h \
     proprietaireqt.h
-SOURCES += camionqt.cpp \
+SOURCES += supprimervehiculeqt.cpp \
+    camionqt.cpp \
     promenadeqt.cpp \
     main.cpp \
     proprietaireqt.cpp
-FORMS += camionqt.ui \
+FORMS += supprimervehiculeqt.ui \
+    camionqt.ui \
     promenadeqt.ui \
     proprietaireqt.ui
 RESOURCES += 

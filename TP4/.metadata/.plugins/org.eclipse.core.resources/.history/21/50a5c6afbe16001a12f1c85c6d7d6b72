@@ -1,0 +1,12 @@
+#include "supprimervehiculeqt.h"
+
+SupprimerVehiculeQt::SupprimerVehiculeQt(QWidget *parent)
+    : QDialog(parent)
+{
+	ui.setupUi(this);
+}
+
+SupprimerVehiculeQt::~SupprimerVehiculeQt()
+{
+
+}
